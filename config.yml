@@ -1,0 +1,17 @@
+logging:
+  level: INFO
+  loggers:
+    no.kobler: DEBUG
+database:
+  driverClass: org.h2.Driver
+  user: sa
+  password:
+  url: jdbc:h2:mem:kobler-campaign-service;DB_CLOSE_DELAY=-1
+defaultHystrixConfig:
+  hystrix.command.RequestBid.execution.isolation.thread.timeoutInMilliseconds: 500
+  hystrix.threadpool.RequestBid.maxQueueSize: 50
+  hystrix.threadpool.RequestBid.coreSize: 5
+  hystrix.command.RequestBid.execution.isolation.thread.interruptOnTimeout: true
+  hystrix.command.MySimpleCommand.requestCache.enabled: false
+
+
