@@ -50,7 +50,6 @@ public class CampaignServiceApplication extends Application<CampaignServiceConfi
             ConfigurationManager.install(new MapConfiguration(configuration.getDefaultHystrixConfig()));
         }
         final Injector injector = Guice.createInjector(new CampaignServiceModule(configuration, environment, hibernate));
-        environment.jersey().register(injector.getInstance(CampaignResource.class));
 
         environment.healthChecks().register("campaigns", injector.getInstance(CampaignHealthCheck.class));
         environment.jersey().register(injector.getInstance(CampaignResource.class));

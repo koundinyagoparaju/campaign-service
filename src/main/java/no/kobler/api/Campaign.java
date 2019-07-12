@@ -21,8 +21,7 @@ import java.util.stream.Collectors;
 public class Campaign {
     @JsonIgnore
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id", updatable = false, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "campaign")
